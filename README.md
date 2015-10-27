@@ -1,6 +1,6 @@
 # CsvToSeeds
 
-[![Code Climate](https://codeclimate.com/github/jeffharrington/csv_to_seeds/badges/gpa.svg)](https://codeclimate.com/github/jeffharrington/csv_to_seeds)
+[![Code Climate](https://codeclimate.com/github/jeffharrington/csv_to_seeds/badges/gpa.svg)](https://codeclimate.com/github/jeffharrington/csv_to_seeds) [![Test Coverage](https://codeclimate.com/github/jeffharrington/csv_to_seeds/badges/coverage.svg)](https://codeclimate.com/github/jeffharrington/csv_to_seeds/coverage)
 
 Take a CSV document and turn it into a series of ActiveRecord creations to be used in a Seed file.
 
