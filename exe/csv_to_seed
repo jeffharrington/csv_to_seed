@@ -3,12 +3,18 @@ require 'bundler/setup'
 require 'csv_to_seed'
 require 'optparse'
 
-options = {}
+# Show help if no arguments provided
 ARGV.push('-h') if ARGV.empty?
+
+options = {}
 OptionParser.new do |opts|
   opts.banner = "Usage: csv_to_seed [OPTIONS] FILEPATH"
   opts.on("-m", "--model MODEL_NAME", "The name of the model to create seeds for") do |model_name|
     options[:model_name] = model_name
+  end
+  opts.on_tail("-v", "--version", "Show version info") do
+    puts CsvToSeed::VERSION
+    exit
   end
   opts.on_tail("-h", "--help", "Show help message") do
     puts opts
