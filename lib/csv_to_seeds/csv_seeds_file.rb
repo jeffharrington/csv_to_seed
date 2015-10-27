@@ -1,8 +1,8 @@
-module CsvToSeed
-  # CSV Seed File
+module CsvToSeeds
+  # CSV Seeds File
   # @author Jeffrey Harrington
   # Object that represents a CSV file that can be turned into a list of ActiveRecord Seed Lines
-  class CsvSeedFile
+  class CsvSeedsFile
     attr_accessor :filepath
     attr_accessor :col_sep
     attr_accessor :quote_char

@@ -1,6 +1,6 @@
 #!/user/bin/env ruby
 require 'bundler/setup'
-require 'csv_to_seed'
+require 'csv_to_seeds'
 require 'optparse'
 
 # Show help if no arguments provided
@@ -8,12 +8,12 @@ ARGV.push('-h') if ARGV.empty?
 
 options = {}
 OptionParser.new do |opts|
-  opts.banner = "Usage: csv_to_seed [OPTIONS] FILEPATH"
+  opts.banner = "Usage: csv_to_seeds [OPTIONS] FILEPATH"
   opts.on("-m", "--model MODEL_NAME", "The name of the model to create seeds for") do |model_name|
     options[:model_name] = model_name
   end
   opts.on_tail("-v", "--version", "Show version info") do
-    puts CsvToSeed::VERSION
+    puts CsvToSeeds::VERSION
     exit
   end
   opts.on_tail("-h", "--help", "Show help message") do
@@ -28,7 +28,7 @@ csv_options[:filepath]   = ARGV[0]
 csv_options[:model_name] = options[:model_name] if options[:model_name]
 
 # Open file and output all the seeds
-file = CsvToSeed::CsvSeedFile.new(csv_options)
+file = CsvToSeeds::CsvSeedsFile.new(csv_options)
 file.seeds.each do |seed|
   puts seed
 end

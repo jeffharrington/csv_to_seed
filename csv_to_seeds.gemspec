@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'csv_to_seed/version'
+require 'csv_to_seeds/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "csv_to_seed"
-  spec.version       = CsvToSeed::VERSION
+  spec.name          = "csv_to_seeds"
+  spec.version       = CsvToSeeds::VERSION
   spec.authors       = ["Jeffrey Harrington"]
   spec.email         = ["jeff.harrington@gmail.com"]
 
   spec.summary       = "CSV file to Ruby seeds file"
   spec.description   = "Take a CSV file and turn it into a series of ActiveRecord creations to be used in a Seed file"
-  spec.homepage      = "http://www.github.com/jeffharrington/csv_to_seed"
+  spec.homepage      = "http://www.github.com/jeffharrington/csv_to_seeds"
   spec.licenses      = ["MIT"]
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

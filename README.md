@@ -1,4 +1,4 @@
-# CsvToSeed
+# CsvToSeeds
 
 Take a CSV document and turn it into a series of ActiveRecord creations to be used in a Seed file.
 
@@ -7,7 +7,7 @@ Take a CSV document and turn it into a series of ActiveRecord creations to be us
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'csv_to_seed'
+gem 'csv_to_seeds'
 ```
 
 And then execute:
@@ -16,13 +16,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install csv_to_seed
+    $ gem install csv_to_seeds
 
 ## Usage
 
-csv-to-seed person.csv >> seeds.rb
+csv-to-seeds person.csv >> seeds.rb
 
-csv-to-seed -m Person records.csv >> seeds.rb
+csv-to-seeds -m Person records.csv >> seeds.rb
 
 ## Requirements
 
@@ -47,7 +47,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/jeffharrington/csv_to_seed.
+Bug reports and pull requests are welcome on GitHub at https://github.com/jeffharrington/csv_to_seeds.
 
 
 
