@@ -1,17 +1,24 @@
 #!/user/bin/env ruby
-
 require 'bundler/setup'
 require 'csv_to_seed'
 require 'optparse'
 
 options = {}
 OptionParser.new do |opts|
-  opts.banner = "Usage: csv_to_seed [options] filename"
-
-  opts.on("-m", "--model-name", "The name of the model to create seeds for") do |m|
-    options[:model_name] = m
+  opts.banner = "Usage: csv_to_seed [OPTIONS] FILEPATH"
+  opts.on("-m", "--model MODEL_NAME", "The name of the model to create seeds for") do |model_name|
+    options[:model_name] = model_name
   end
 end.parse!
+fail "Please specify path of CSV file to parse\nUsage: csv_to_seed [OPTIONS] FILEPATH" if ARGV.length != 1
 
-p options
-p ARGV
+# Prepare options for CSV Seed file
+csv_options = {}
+csv_options[:filepath]   = ARGV[0]
+csv_options[:model_name] = options[:model_name] if options[:model_name]
+
+# Open file and output all the seeds
+file = CsvToSeed::CsvSeedFile.new(csv_options)
+file.seeds.each do |seed|
+  puts seed
+end
