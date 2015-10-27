@@ -1,0 +1,16 @@
+#
+# Configuration for rubocop
+#
+# Mostly for disabling unwanted cops
+#
+StringLiterals:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Style/SpaceAroundOperators:
+  MultiSpaceAllowedForOperators:
+   - '='
+   - '=>'
+   - '||'
