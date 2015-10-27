@@ -4,13 +4,17 @@ require 'csv_to_seed'
 require 'optparse'
 
 options = {}
+ARGV.push('-h') if ARGV.empty?
 OptionParser.new do |opts|
   opts.banner = "Usage: csv_to_seed [OPTIONS] FILEPATH"
   opts.on("-m", "--model MODEL_NAME", "The name of the model to create seeds for") do |model_name|
     options[:model_name] = model_name
   end
+  opts.on_tail("-h", "--help", "Show help message") do
+    puts opts
+    exit
+  end
 end.parse!
-fail "Please specify path of CSV file to parse\nUsage: csv_to_seed [OPTIONS] FILEPATH" if ARGV.length != 1
 
 # Prepare options for CSV Seed file
 csv_options = {}
