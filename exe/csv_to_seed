@@ -1,0 +1,17 @@
+#!/user/bin/env ruby
+
+require 'bundler/setup'
+require 'csv_to_seed'
+require 'optparse'
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: csv_to_seed [options] filename"
+
+  opts.on("-m", "--model-name", "The name of the model to create seeds for") do |m|
+    options[:model_name] = m
+  end
+end.parse!
+
+p options
+p ARGV
